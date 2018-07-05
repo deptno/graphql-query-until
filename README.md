@@ -1,17 +1,15 @@
-# GraphQL Query Until
+# React Apollo Query Until
 
-> under develop, publish yet.
-
-`graphql-query-until` is designed for special case of SSR.
+`react-apollo-query-until` is designed for special case of SSR.
 
 If you need to fetch data until last(or specific) **cursor(offset)**, but `apollo-client` `<Query>`'s fetchMore doesn't seem to work in SSR(by `getDataFromTree` function).  
 So I tried to handle `<Query>` recursive way, and it works.
 
-`graphql-query-until` is helper to handle this case. works {server, client} side both.
+`react-apollo-query-until` is helper to handle this case. works {server, client} side both.
 
 ## Installation
 
-`npm install graphql-query-until`
+`npm install react-apollo-query-until`
 
 ## Usage
 
@@ -53,7 +51,7 @@ QueryUntil.defaultProps = {
 
 ```typescript jsx
 import * as React from 'react'
-import {QueryUntil} from 'graphql-query-until'
+import {QueryUntil} from 'react-apollo-query-until'
 
 const User: React.SFC<{user: any}> = /* implement some component */
 

@@ -1,6 +1,6 @@
 {
   "name": "react-apollo-query-until",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "index.js",
   "repository": "https://github.com/deptno/react-apollo-query-until.git",
   "author": "Bonggyun Lee <deptno@gmail.co>",
