@@ -1,0 +1,51 @@
+{
+  "name": "graphql-query-until",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "https://github.com/deptno/graphql-query-until.git",
+  "author": "Bonggyun Lee <deptno@gmail.co>",
+  "license": "MIT",
+  "dependencies": {
+    "graphql": "^0.13.2",
+    "react-apollo": "^2.1.8"
+  },
+  "description": "GraphQL fetch with end of cursor. It is useful when you requires SSR. It's universal lib. Built on top of apollo-graphql.",
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testMatch": [
+      "**/*.(test|spec).(ts|tsx)"
+    ],
+    "globals": {
+      "ts-jest": {
+        "useBabelrc": true,
+        "tsConfigFile": "../../jest.tsconfig.json"
+      }
+    },
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "enzyme.js"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/../../enzyme.js",
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text",
+      "text-summary"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/../../__tests__/__mocks__/mocks.js",
+      "\\.(css|less)$": "<rootDir>/../../__tests__/__mocks__/mocks.js"
+    }
+  },
+  "devDependencies": {
+    "apollo-boost": "^0.1.10",
+    "graphql-tag": "^2.9.2"
+  }
+}
