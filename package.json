@@ -1,8 +1,8 @@
 {
-  "name": "graphql-query-until",
+  "name": "react-apollo-query-until",
   "version": "0.1.0",
   "main": "index.js",
-  "repository": "https://github.com/deptno/graphql-query-until.git",
+  "repository": "https://github.com/deptno/react-apollo-query-until.git",
   "author": "Bonggyun Lee <deptno@gmail.co>",
   "license": "MIT",
   "scripts": {
