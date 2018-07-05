@@ -41,8 +41,7 @@ QueryUntil.defaultProps = {
   cursorProp: 'cursor',
   variables: {
     [this.cursorProp]: null,
-  },
-  data: {}
+  }
 }
 ````
 
@@ -68,7 +67,9 @@ export const QLGithubUser: React.SFC = () =>
         return endCursor
       }
     }}
-    merge={(prev, data) => ({
+    merge={(prev, data) => !prev
+      ? data
+      : {
       ...prev,
       user: {
         ...prev.user,
@@ -77,7 +78,7 @@ export const QLGithubUser: React.SFC = () =>
           nodes   : prev.user.repositories.nodes.concat(data.user.repositories.nodes),
           pageInfo: data.user.repositories.pageInfo
         }
-      }})}
+    }}}
   >
     {({data, loading, fetchMore}) => (loading || !data) ? 'Loading...' : <User {...data}/> }
   </QueryUntil>

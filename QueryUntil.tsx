@@ -3,15 +3,7 @@ import {Query} from 'react-apollo'
 import {DocumentNode} from 'graphql'
 
 export const QueryUntil: React.SFC<Props> = (props) => {
-  const {
-    data: prev,
-          query,
-          variables,
-          merge,
-          getNextCursor,
-          cursorProp,
-          children
-  } = props
+  const {data: prev, query, variables, merge, getNextCursor, cursorProp, children} = props
 
   return (
     <Query query={query} variables={variables}>
@@ -37,6 +29,7 @@ export const QueryUntil: React.SFC<Props> = (props) => {
               </QueryUntil>
             )
           }
+          return children({...context, data: merge(prev, data)})
         }
 
         return children({...context, data: prev})
@@ -48,8 +41,7 @@ QueryUntil.defaultProps = {
   cursorProp: 'cursor',
   variables: {
     [this.cursorProp]: null,
-  },
-  data: {}
+  }
 }
 
 interface Props<Props = any, Data = any, Variables = any> {
